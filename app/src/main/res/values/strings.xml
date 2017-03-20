@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EdinburghApp</string>
+    <string name="edinburghlogo">Edinburgh Logo</string>
+    <string-array name="options">
+        <item>Drink</item>
+        <item>Eat</item>
+        <item>Sleep</item>
+        <item>Activity</item>
+    </string-array>
+</resources>
