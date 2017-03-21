@@ -6,6 +6,7 @@ package com.codeclan.edinburghapp;
 
 public class Eat {
 
+    private int id;
     private String name;
     private String address;
     private String description;
@@ -14,13 +15,14 @@ public class Eat {
 
 
     public static final Eat[] eats = {
-            new Eat("Ting Thai Caravan", "8-9 Teviot Place", "Authentic thai street food", R.drawable.tingthai),
-            new Eat("El Cartrel", "64 Thistle Street", "Authentic mexican street food", R.drawable.cartel),
-            new Eat("Bread Meats Bread", "92 Lothian Road", "Probably the best burgers", R.drawable.bmb)
+            new Eat(1, "Ting Thai Caravan", "8-9 Teviot Place", "Authentic thai street food", R.drawable.tingthai),
+            new Eat(2, "El Cartrel", "64 Thistle Street", "Authentic mexican street food", R.drawable.cartel),
+            new Eat(3, "Bread Meats Bread", "92 Lothian Road", "Probably the best burgers", R.drawable.bmb)
 
     };
 
-    private Eat(String name, String address, String description, int imageResourceId) {
+    private Eat(int id, String name, String address, String description, int imageResourceId) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.description = description;
@@ -28,21 +30,22 @@ public class Eat {
 
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getDescription() {
+        return description;
     }
 
-    public void setImageResourceId(int imageResourceId) {
-        this.imageResourceId = imageResourceId;
+    public int getImageResourceId() {
+        return imageResourceId;
     }
+
 
     public String toString() {
         return this.name;

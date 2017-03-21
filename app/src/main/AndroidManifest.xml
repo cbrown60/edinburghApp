@@ -24,7 +24,12 @@
         </activity>
         <activity android:name=".DrinkCategoryActivity" />
         <activity android:name=".EatCategoryActivity" />
-        <activity android:name=".SleepCategoryActivity"></activity>
+        <activity android:name=".SleepCategoryActivity" />
+        <activity android:name=".AttractionCategoryActivity" />
+        <activity android:name=".DrinkActivity" />
+        <activity android:name=".EatActivity" />
+        <activity android:name=".SleepActivity" />
+        <activity android:name=".AttractionActivity"></activity>
     </application>
 
 </manifest>

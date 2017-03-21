@@ -35,6 +35,12 @@ public class TopLevelActivity extends Activity {
                     Intent intent = new Intent(TopLevelActivity.this, SleepCategoryActivity.class);
                     startActivity(intent);
                 }
+
+                if (position == 3) {
+                    Intent intent = new Intent(TopLevelActivity.this, AttractionCategoryActivity.class);
+                    startActivity(intent);
+                }
+
             }
         };
 

@@ -4,8 +4,7 @@ package com.codeclan.edinburghapp;
  * Created by user on 20/03/2017.
  */
 
-public class Drink {
-
+public class Attraction {
     private String name;
     private String address;
     private String description;
@@ -13,14 +12,14 @@ public class Drink {
 //        private float ratingStar;
 
 
-    public static final Drink[] drinks = {
-            new Drink("Bramble", "16a Queen Street", "Subterranean venue, serving classic and nouveau concoctions", R.drawable.bramble),
-            new Drink("Panda & Sons", "79 Queen Street", "Edinburghs very own speakeasy", R.drawable.panda_family),
-            new Drink("Byant & Mack Detectives", "87-89 Rose Street", "Uncover some exceptional cocktails here", R.drawable.bryantmack)
+    public static final Attraction[] attractions = {
+            new Attraction("Edinburgh Dungeons", "16a Queen Street", "Subterranean venue, serving classic and nouveau concoctions", R.drawable.dungeon),
+            new Attraction("Graveyard Tour", "79 Queen Street", "Edinburghs very own speakeasy", R.drawable.graveyard),
+            new Attraction("Mary Kings Close", "87-89 Rose Street", "Uncover some exceptional cocktails here", R.drawable.marykings)
 
     };
 
-    private Drink(String name, String address, String description, int imageResourceId){
+    private Attraction(String name, String address, String description, int imageResourceId){
         this.name = name;
         this.address = address;
         this.description = description;
@@ -34,14 +33,14 @@ public class Drink {
 
     public String getAddress() {
         return address;
-}
+    }
 
     public String getDescription() {
         return description;
     }
 
     public int getImageResourceId() {
-        return imageResourceId ;
+        return imageResourceId;
     }
 
     public String toString(){

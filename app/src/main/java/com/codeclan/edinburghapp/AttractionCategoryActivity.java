@@ -8,20 +8,18 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.lang.reflect.Array;
-
-public class DrinkCategoryActivity extends ListActivity {
+public class AttractionCategoryActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ListView listDrinks = getListView();
-        ArrayAdapter<Drink> listAdapter = new ArrayAdapter<Drink>(
+        ListView listAttractions = getListView();
+        ArrayAdapter<Attraction> listAdapter = new ArrayAdapter<Attraction>(
                 this,
                 android.R.layout.simple_list_item_1,
-                Drink.drinks
+                Attraction.attractions
         );
-        listDrinks.setAdapter(listAdapter);
+        listAttractions.setAdapter(listAdapter);
     }
 
     @Override
@@ -29,8 +27,9 @@ public class DrinkCategoryActivity extends ListActivity {
                                 View itemView,
                                 int position,
                                 long id){
-        Intent intent = new Intent(DrinkCategoryActivity.this, DrinkActivity.class);
-        intent.putExtra(DrinkActivity.EXTRA_DRINKNO, (int) id);
+        Intent intent = new Intent(AttractionCategoryActivity.this, AttractionActivity.class);
+        intent.putExtra(AttractionActivity.EXTRA_ATTRACTIONNO, (int) id);
         startActivity(intent);
     }
 }
+
