@@ -49,6 +49,81 @@ public class DrinkActivity extends Activity {
 
 
 
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar); // initiate a rating bar
+
+        // Sets up our shared preferences and gets info back
+        SharedPreferences sharedPref = getSharedPreferences(RATINGS, Context.MODE_PRIVATE);
+
+        Gson gson = new Gson();
+
+        String defaultValue = gson.toJson(Drink.drinks);
+        String drinks = sharedPref.getString("drinkRatingsList", defaultValue);
+
+        // Make an array of atrractions out of the string we got back from shared prefs
+        TypeToken<ArrayList<Drink>> drinksArrayList = new TypeToken<ArrayList<Drink>>(){};
+        ArrayList<Drink> myDrinks = gson.fromJson(drinks, drinksArrayList.getType());
+
+        // Loop through our array list of arractions
+
+
+        Log.d(myDrinks.toString(), "Whole shared prefs");
+        for(Drink locations : myDrinks){
+            if(locations.getName().equals(drink.getName()) ){
+                ratingBar.setRating(locations.getRatingStar());
+            }
+        }
+
+    }
+
+
+    public void rateMe(View view){
+
+        SharedPreferences sharedPref = getSharedPreferences(RATINGS, Context.MODE_PRIVATE);
+
+        Gson gson = new Gson();
+
+        String defaultValue = gson.toJson(Drink.drinks);
+        String drinks = sharedPref.getString("drinkRatingsList", defaultValue);
+
+        // Make an array of atrractions out of the string we got back from shared prefs
+        TypeToken<ArrayList<Drink>> drinksArrayList = new TypeToken<ArrayList<Drink>>(){};
+        ArrayList<Drink> myDrinks = gson.fromJson(drinks, drinksArrayList.getType());
+
+        drink.setRatingStar(ratingBar.getRating());
+
+        boolean drinkSet = false;
+
+        for(Drink existingDrink : myDrinks){
+            if(existingDrink.getName().equals(drink.getName())){
+                int index = myDrinks.indexOf(existingDrink);
+                myDrinks.set(index, drink);
+                drinkSet = true;
+            }
+        }
+
+        if (!drinkSet) {
+            myDrinks.add(drink);
+        }
+
+
+
+
+        Log.d(String.valueOf(myDrinks.size()), "Before save");
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("drinkRatingsList", gson.toJson(myDrinks));
+
+        Toast.makeText(getApplicationContext(),
+                String.valueOf(ratingBar.getRating()), Toast.LENGTH_LONG).show();
+//        Log.d(String.valueOf(ratingBar.getRating()), "star rating:");
+//        Log.d(String.valueOf(attraction.getId()),"attraction id");
+
+
+    }
+
+
+
+
 }
 
 
