@@ -10,26 +10,35 @@ public class Sleep {
     private String address;
     private String description;
     private int imageResourceId;
-//        private float ratingStar;
+    private float ratingStar;
 
 
     public static final Sleep[] sleeps = {
-            new Sleep(1,"Tigerlilly", "125 George Street", "Upscale boutique living", R.drawable.tigerlilly),
-            new Sleep(2,"Le Monde", "16 George Street", "Central party pad", R.drawable.lemonde),
-            new Sleep(3,"Witchery", "352 Castle Hill", "Unique experience", R.drawable.witchery)
+            new Sleep(1,"Tigerlilly", "125 George Street", "Upscale boutique living", R.drawable.tigerlilly,3),
+            new Sleep(2,"Le Monde", "16 George Street", "Central party pad", R.drawable.lemonde,3),
+            new Sleep(3,"Witchery", "352 Castle Hill", "Unique experience", R.drawable.witchery,3)
 
     };
 
-    private Sleep(int id, String name, String address, String description, int imageResourceId){
+    private Sleep(int id, String name, String address, String description, int imageResourceId, float ratingStar){
         this.id = id;
         this.name = name;
         this.address = address;
         this.description = description;
         this.imageResourceId = imageResourceId;
+        this.ratingStar = ratingStar;
 
     }
     public int getId(){
         return id;
+    }
+
+    public float getRatingStar() {
+        return ratingStar;
+    }
+
+    public void setRatingStar(float ratingStar) {
+        this.ratingStar = ratingStar;
     }
 
     public String getName() {

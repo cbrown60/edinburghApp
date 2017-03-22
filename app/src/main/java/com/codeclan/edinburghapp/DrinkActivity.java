@@ -47,8 +47,6 @@ public class DrinkActivity extends Activity {
         description.setText(drink.getDescription());
 
 
-
-
         ratingBar = (RatingBar) findViewById(R.id.ratingBar); // initiate a rating bar
 
         // Sets up our shared preferences and gets info back

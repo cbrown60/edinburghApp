@@ -31,4 +31,6 @@ public class EatCategoryActivity extends ListActivity {
         intent.putExtra(EatActivity.EXTRA_EATNO, (int) id);
         startActivity(intent);
     }
+
+
 }
