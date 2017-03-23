@@ -15,7 +15,9 @@ public class Drink {
 
     public static final Drink[] drinks = {
             new Drink(1,"Bramble", "16a Queen Street", "Subterranean venue, serving classic and nouveau concoctions", R.drawable.bramble,3),
-            new Drink(2,"Panda & Sons", "79 Queen Street", "Edinburghs very own speakeasy", R.drawable.panda_family,3),
+            new Drink(2,"Panda & Sons", "79 Queen Street", "Panda & Sons opened in November 2013 by Panda and his family. The foundation the bar was built on was to create a place where all ages and all people would feel welcome whether it would be for one of our deliciously creative cocktails, wide range of craft beers or our extensive wine list.\n" +
+                    "\n" +
+                    "We are a hidden bar fusing the classic Prohibition style Speakeasy and a nod to the Vintage style Barbershop. All we can say is that if you find a Barbershop with some foreign currency you have made it to the Libation Destination!", R.drawable.panda_family,3),
             new Drink(3,"Byant & Mack Detectives", "87-89 Rose Street", "Uncover some exceptional cocktails here", R.drawable.bryantmack,3)
 
     };
